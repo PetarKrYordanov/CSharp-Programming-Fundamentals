@@ -18,7 +18,7 @@ namespace _08._Letters_Change_Numbers
                 var firstLetter = item.First();
                 var secondLetter = item.Last();
                 var number = int.Parse(item.Substring(1, item.Length - 2));
-               double currentSum;
+                double currentSum;
 
                 if (Char.IsUpper(firstLetter))
                 {

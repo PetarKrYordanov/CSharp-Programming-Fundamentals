@@ -15,7 +15,7 @@ namespace _02._Change_List
 
             string comandLine = Console.ReadLine();
 
-            while (comandLine != "Odd" && comandLine !="Even")
+            while (comandLine != "Odd" && comandLine != "Even")
             {
                 string[] comandArgs = comandLine
                     .Split(' ')
@@ -41,7 +41,7 @@ namespace _02._Change_List
             {
                 foreach (var element in inputNumbers)
                 {
-                    if (element % 2 !=0)
+                    if (element % 2 != 0)
                     {
                         Console.Write(element + " ");
                     }

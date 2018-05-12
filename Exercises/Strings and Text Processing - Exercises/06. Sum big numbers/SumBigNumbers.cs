@@ -10,8 +10,16 @@ namespace _06._Sum_big_numbers
     {
         static void Main(string[] args)
         {
-            var firstNum = Console.ReadLine().TrimStart('0').ToCharArray().Select(s => ((int)s - '0')).ToArray();
-            var secondNum = Console.ReadLine().TrimStart('0').ToCharArray().Select(s => (int)s - '0').ToArray();
+            var firstNum = Console.ReadLine().TrimStart('0')
+                .ToCharArray()
+                .Select(s => ((int)s - '0'))
+                .ToArray();
+
+            var secondNum = Console.ReadLine()
+                .TrimStart('0')
+                .ToCharArray()
+                .Select(s => (int)s - '0').ToArray();
+
             var result = "";
 
             Array.Reverse(firstNum);
@@ -24,10 +32,10 @@ namespace _06._Sum_big_numbers
             for (int i = 0; i < minLength; i++)
             {
                 int currentDigit = 0;
-      
+
                 int sum = firstNum[i] + secondNum[i] + remainder;
 
-                if (sum>9)
+                if (sum > 9)
                 {
                     currentDigit = sum % 10;
                     remainder = sum / 10;
@@ -41,9 +49,9 @@ namespace _06._Sum_big_numbers
                 result += currentDigit;
             }
 
-            if (minLength!= maxLength)
+            if (minLength != maxLength)
             {
-                if (firstNum.Length>secondNum.Length)
+                if (firstNum.Length > secondNum.Length)
                 {
                     result += MaxSum(firstNum, remainder, minLength, maxLength);
                 }
@@ -59,12 +67,12 @@ namespace _06._Sum_big_numbers
             }
             Console.WriteLine();
         }
-        static string MaxSum(int[] nums,int rem, int minLen, int maxlen)
+        static string MaxSum(int[] nums, int rem, int minLen, int maxlen)
         {
             var result = "";
             int currentDigit;
             int sum;
-            
+
             for (int i = minLen; i < maxlen; i++)
             {
                 sum = nums[i] + rem;
@@ -77,9 +85,8 @@ namespace _06._Sum_big_numbers
             {
                 result += rem;
             }
-
             return result;
         }
     }
-   
+
 }

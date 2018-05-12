@@ -38,7 +38,7 @@ namespace _06._User_Logs
             }
             foreach (var user in userLogs)
             {
-                Console.WriteLine(user.Key +":");
+                Console.WriteLine(user.Key + ":");
 
                 var ipPrint = user.Value.Keys.ToList();
                 var occurances = user.Value.Values.ToList();

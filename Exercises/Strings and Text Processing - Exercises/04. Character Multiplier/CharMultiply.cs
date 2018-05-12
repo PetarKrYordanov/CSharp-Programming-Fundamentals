@@ -12,14 +12,14 @@ namespace _04._Character_Multiplier
                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                .ToArray();
 
-            var result = MultiplyCharacters(input);           
+            var result = MultiplyCharacters(input);
             Console.WriteLine(result);
         }
 
         private static int MultiplyCharacters(string[] input)
         {
-            int result=0;
-            
+            int result = 0;
+
             var firstString = input[0];
             var secondString = input[1];
             var minLength = Math.Min(firstString.Length, secondString.Length);

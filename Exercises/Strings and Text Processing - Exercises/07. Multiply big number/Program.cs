@@ -18,19 +18,19 @@ namespace _07._Multiply_big_number
             int reminder = 0;
             string result = "";
 
-            if (multiplier ==0)
+            if (multiplier == 0)
             {
                 Console.WriteLine(0);
                 return;
             }
             for (int i = 0; i < number.Length; i++)
             {
-                int sum = multiplier * number[i]+reminder;
+                int sum = multiplier * number[i] + reminder;
                 int currentDigit = sum % 10;
                 reminder = sum / 10;
                 result += currentDigit;
 
-                if (i == number.Length-1 && reminder !=0)
+                if (i == number.Length - 1 && reminder != 0)
                 {
                     result += reminder;
                 }

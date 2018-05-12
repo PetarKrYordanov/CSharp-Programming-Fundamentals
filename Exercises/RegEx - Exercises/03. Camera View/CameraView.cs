@@ -17,7 +17,7 @@ namespace _03._Camera_View
             int toTake = inputNumbers[1];
             int toSkip = inputNumbers[0];
 
-            var pattern = @"\|<([\w]{"+toSkip+@"})([\w]{0,"+toTake+@"})";
+            var pattern = @"\|<([\w]{" + toSkip + @"})([\w]{0," + toTake + @"})";
 
             var result = new List<string>();
 
@@ -27,8 +27,8 @@ namespace _03._Camera_View
             {
                 result.Add(match.Groups[2].Value);
             }
- 
-            Console.WriteLine(String.Join(", ",result));
+
+            Console.WriteLine(String.Join(", ", result));
         }
     }
 }

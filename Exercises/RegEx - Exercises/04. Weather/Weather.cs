@@ -13,7 +13,7 @@ namespace _04._Weather
             var pattern = @"([A-Z]{2})([0-9]+.[0-9]+)([A-Za-z]+)\|";
             var lines = new List<string>();
 
-            while (input!= "end")
+            while (input != "end")
             {
                 lines.Add(input);
                 input = Console.ReadLine();
@@ -49,7 +49,7 @@ namespace _04._Weather
 
                     weather[current.Groups[1].Value].Add(current.Groups[2].Value);
                     weather[current.Groups[1].Value].Add(current.Groups[3].Value);
-                }              
+                }
             }
             foreach (var pair in weather.OrderBy(x => double.Parse(x.Value[0])))
             {

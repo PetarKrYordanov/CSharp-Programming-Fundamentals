@@ -19,7 +19,7 @@ namespace _05._Key_Replacer
 
             var inputTwo = Console.ReadLine();
 
-            var patternTwo =  $@"{startKey}(.*?){endKey}";
+            var patternTwo = $@"{startKey}(.*?){endKey}";
             Regex regex = new Regex(patternTwo);
 
             var result = new List<string>();
@@ -40,7 +40,7 @@ namespace _05._Key_Replacer
             }
             else
             {
-                Console.WriteLine(string.Join("",result));
+                Console.WriteLine(string.Join("", result));
             }
         }
     }

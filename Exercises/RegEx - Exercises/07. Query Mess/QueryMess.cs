@@ -14,7 +14,7 @@ namespace _07._Query_Mess
             var patternReplace = @"((\+)|(%20))+";
             var pattern = @"(^|\?|\&|\n)([^\?=\&\s]*?)=([^\s\?\&=]+)";
 
-            while (input !="END")
+            while (input != "END")
             {
                 MatchCollection keyValueCollection = Regex.Matches(input, pattern);
 
@@ -37,9 +37,10 @@ namespace _07._Query_Mess
                         query[currentKey].Add(currentValue);
                     }
                 }
+
                 foreach (var kvp in query)
                 {
-                    Console.Write($"{kvp.Key}=[{string.Join(", ",kvp.Value)}]");
+                    Console.Write($"{kvp.Key}=[{string.Join(", ", kvp.Value)}]");
                 }
 
                 Console.WriteLine();

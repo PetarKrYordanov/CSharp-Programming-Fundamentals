@@ -38,7 +38,7 @@ namespace _08.Logs_Aggregator
 
                 inputLine = Console.ReadLine();
             }
-            foreach (var log in userLogs.OrderBy(x =>x.Key).ThenByDescending(x => x.Value.Keys))
+            foreach (var log in userLogs.OrderBy(x => x.Key).ThenByDescending(x => x.Value.Keys))
             {
                 List<string> listOfIpAddres = new List<string>();
 
@@ -47,7 +47,7 @@ namespace _08.Logs_Aggregator
                     listOfIpAddres.Add(item.Key);
                 }
                 listOfIpAddres = listOfIpAddres.OrderBy(x => x).ToList();
-                Console.WriteLine($"{log.Key}: {log.Value.Values.Sum()} [{string.Join(", ",listOfIpAddres)}]" );     
+                Console.WriteLine($"{log.Key}: {log.Value.Values.Sum()} [{string.Join(", ", listOfIpAddres)}]");
             }
         }
     }

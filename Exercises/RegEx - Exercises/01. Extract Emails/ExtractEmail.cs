@@ -7,7 +7,7 @@ namespace _01._Extract_Emails
     {
         static void Main()
         {
-           string input = Console.ReadLine();
+            string input = Console.ReadLine();
             string pattern = @"(^|?<=\s)[a-z0-9]+([-_.]*[a-z0-9])*@[a-z0-9]+([.\-]+[a-z0-9]+)+";
 
             MatchCollection matches = Regex.Matches(input, pattern);

@@ -14,7 +14,7 @@ namespace _07._Population_Counter
 
             while (inputLine != "report")
             {
-               var inputLineAsList = inputLine.Split('|').ToList();
+                var inputLineAsList = inputLine.Split('|').ToList();
                 var city = inputLineAsList[0];
                 var country = inputLineAsList[1];
                 long population = long.Parse(inputLineAsList[2]);
@@ -34,7 +34,7 @@ namespace _07._Population_Counter
                 }
                 inputLine = Console.ReadLine();
             }
-            foreach (var country in countryPopulation.OrderByDescending(x =>x.Value.Values.Sum()))
+            foreach (var country in countryPopulation.OrderByDescending(x => x.Value.Values.Sum()))
             {
                 Console.WriteLine($"{country.Key} (total population: {country.Value.Values.Sum()})");
 

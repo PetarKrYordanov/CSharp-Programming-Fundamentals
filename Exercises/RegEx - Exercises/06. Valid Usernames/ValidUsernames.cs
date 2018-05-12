@@ -13,7 +13,7 @@ namespace _06._Valid_Usernames
             var inputUser = Console.ReadLine()
                 .Split(split.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
                 .ToList();
-            
+
             var validUsers = new List<String>();
             var patterrn = @"([a-zA-Z][\w]{2,24})";
 
@@ -23,7 +23,7 @@ namespace _06._Valid_Usernames
 
                 if (match.Success)
                 {
-                    if (match.Value.Length==user.Length)
+                    if (match.Value.Length == user.Length)
                     {
                         validUsers.Add(user);
                     }
@@ -32,15 +32,16 @@ namespace _06._Valid_Usernames
 
             var listLen = new List<int>();
 
-            for (int i = 0; i < validUsers.Count-1; i++)
+            for (int i = 0; i < validUsers.Count - 1; i++)
             {
-                int sumLen = validUsers[i].Length + validUsers[i+1].Length;
+                int sumLen = validUsers[i].Length + validUsers[i + 1].Length;
                 listLen.Add(sumLen);
             }
 
-           int startIndex = listLen.IndexOf(listLen.Max());
+            int startIndex = listLen.IndexOf(listLen.Max());
+
             Console.WriteLine(validUsers[startIndex]);
-            Console.WriteLine(validUsers[startIndex+1]);
+            Console.WriteLine(validUsers[startIndex + 1]);
 
 
         }

@@ -10,7 +10,9 @@ namespace _02._Extract_Sentences_by_Keyword
         {
             var word = Console.ReadLine();
             var text = Console.ReadLine();
+
             string pattern = $@"\b{word}\b";
+
             var sentences = text
                 .Trim()
                 .Split(new char[] { '.', '!', '?' }, StringSplitOptions.RemoveEmptyEntries)
@@ -18,7 +20,7 @@ namespace _02._Extract_Sentences_by_Keyword
 
             foreach (var sentence in sentences)
             {
-                if (Regex.IsMatch(sentence,pattern))
+                if (Regex.IsMatch(sentence, pattern))
                 {
                     Console.WriteLine(sentence.Trim());
                 }
