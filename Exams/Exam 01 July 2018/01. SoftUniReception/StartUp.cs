@@ -1,7 +1,6 @@
-﻿using System;
-
-namespace _01._SoftUniReception
+﻿namespace _01._SoftUniReception
 {
+    using System;
     class StartUp
     {
         static void Main(string[] args)

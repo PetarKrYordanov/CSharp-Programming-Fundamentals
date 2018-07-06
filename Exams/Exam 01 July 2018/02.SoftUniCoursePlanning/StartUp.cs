@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace _02.SoftUniCoursePlanning
+﻿namespace _02.SoftUniCoursePlanning
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     class StartUp
     {
         static void Main(string[] args)
