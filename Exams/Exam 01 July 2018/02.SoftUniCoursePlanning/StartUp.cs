@@ -12,7 +12,7 @@ namespace _02.SoftUniCoursePlanning
 
             var commandInput = Console.ReadLine();
 
-            while (commandInput!= "course start")
+            while (commandInput != "course start")
             {
                 var commandArgs = commandInput.Split(':').ToArray();
                 var command = commandArgs[0];
@@ -21,7 +21,7 @@ namespace _02.SoftUniCoursePlanning
                 switch (command)
                 {
                     case "Add":
-                        AddLesson(commandArgs,startingProgram);
+                        AddLesson(commandArgs, startingProgram);
                         break;
                     case "Insert":
                         InsertLesson(commandArgs, startingProgram);
@@ -42,9 +42,9 @@ namespace _02.SoftUniCoursePlanning
             }
             for (int i = 0; i < startingProgram.Count; i++)
             {
-                Console.WriteLine($"{i+1}.{startingProgram[i]}");
+                Console.WriteLine($"{i + 1}.{startingProgram[i]}");
             }
-                    
+
         }
 
         private static void AddExercise(string[] commandArgs, List<string> startingProgram)
@@ -69,7 +69,7 @@ namespace _02.SoftUniCoursePlanning
 
         private static void SwapLessons(string[] commandArgs, List<string> startingProgram)
         {
-            var firstLesson= commandArgs[1];
+            var firstLesson = commandArgs[1];
             var secondLesson = commandArgs[2];
 
             if (!startingProgram.Contains(firstLesson))
@@ -83,23 +83,23 @@ namespace _02.SoftUniCoursePlanning
             var indexOne = startingProgram.IndexOf(firstLesson);
             var indexTwo = startingProgram.IndexOf(secondLesson);
 
-            if (startingProgram.IndexOf(firstLesson)>startingProgram.IndexOf(secondLesson))
+            if (startingProgram.IndexOf(firstLesson) > startingProgram.IndexOf(secondLesson))
             {
 
-                RearrengeProgram(indexTwo, secondLesson, indexOne, firstLesson,startingProgram);
+                RearrengeProgram(indexTwo, secondLesson, indexOne, firstLesson, startingProgram);
             }
             else
             {
-               RearrengeProgram(indexOne, firstLesson, indexTwo, secondLesson,startingProgram);
+                RearrengeProgram(indexOne, firstLesson, indexTwo, secondLesson, startingProgram);
             }
-            
+
         }
 
-        private static void RearrengeProgram(int firstIndex, string firstLesson, int secondIndex, string secondLesson,List<string> program)
+        private static void RearrengeProgram(int firstIndex, string firstLesson, int secondIndex, string secondLesson, List<string> program)
         {
             var newProgram = new List<string>();
-            var exerciseOne =  firstLesson + "-Exercise";
-            var exerciseTwo =  secondLesson + "-Exercise";
+            var exerciseOne = firstLesson + "-Exercise";
+            var exerciseTwo = secondLesson + "-Exercise";
             bool hasExerciseOne = program.Contains(exerciseOne);
             bool hasExrciseTwo = program.Contains(exerciseTwo);
 
@@ -111,7 +111,7 @@ namespace _02.SoftUniCoursePlanning
                 program.RemoveAt(firstIndex);
 
                 program.Insert(firstIndex, secondLesson);
-                program.Insert(firstIndex+1, exerciseTwo);
+                program.Insert(firstIndex + 1, exerciseTwo);
                 program.Insert(secondIndex, firstLesson);
                 program.Insert(secondIndex + 1, exerciseTwo);
             }
@@ -132,7 +132,7 @@ namespace _02.SoftUniCoursePlanning
                 program.RemoveAt(firstIndex);
 
                 program.Insert(firstIndex, secondLesson);
-                program.Insert(firstIndex+1, exerciseTwo);
+                program.Insert(firstIndex + 1, exerciseTwo);
                 program.Insert(secondIndex + 1, firstLesson);
             }
             else
@@ -169,13 +169,13 @@ namespace _02.SoftUniCoursePlanning
             {
                 return;
             }
-            if (!startingProgram.Contains(lessonToInsert) && (index>=0 && index<startingProgram.Count))
+            if (!startingProgram.Contains(lessonToInsert) && (index >= 0 && index < startingProgram.Count))
             {
                 startingProgram.Insert(index, lessonToInsert);
             }
         }
 
-        private static void AddLesson(string[] commandArgs,List<string> program)
+        private static void AddLesson(string[] commandArgs, List<string> program)
         {
             var lessonToAdd = commandArgs[1];
             if (!program.Contains(lessonToAdd))
